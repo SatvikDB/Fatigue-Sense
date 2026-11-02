@@ -1,0 +1,53 @@
+{
+  "experiment": "A+B+C+D",
+  "description": {
+    "A": "16-mixed precision",
+    "B": "batch_size=256",
+    "C": "features: avg_cpu + avg_memory + max_cpu + assigned_memory",
+    "D": "lookback=24 steps (2 hours)"
+  },
+  "checkpoint": "D:\\FatigueSense AI\\checkpoints\\tft_exp_abcd.ckpt",
+  "best_epoch": 41,
+  "best_val_loss": 0.0035149124450981617,
+  "training_duration_minutes": 455.1,
+  "validation": {
+    "mae": 0.0007334216497838497,
+    "rmse": 0.001858536503277719
+  },
+  "test": {
+    "mae": 0.0006651815492659807,
+    "rmse": 0.0015027272747829556
+  },
+  "comparison": {
+    "baseline_tft": {
+      "test_mae": 0.000722,
+      "test_rmse": 0.00153
+    },
+    "persistence": {
+      "test_mae": 0.000862
+    },
+    "mae_vs_baseline_pct": -7.87,
+    "rmse_vs_baseline_pct": -1.78,
+    "mae_vs_persistence_pct": -22.83
+  },
+  "config": {
+    "hidden_size": 128,
+    "attention_head_size": 4,
+    "dropout": 0.1,
+    "hidden_continuous_size": 64,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "max_epochs": 50,
+    "patience": 10,
+    "lookback_steps": 24,
+    "horizon_steps": 3,
+    "precision": "bf16-mixed",
+    "seed": 42,
+    "features": [
+      "avg_cpu_scaled",
+      "avg_memory_scaled",
+      "max_cpu_scaled",
+      "assigned_memory_scaled"
+    ]
+  }
+}

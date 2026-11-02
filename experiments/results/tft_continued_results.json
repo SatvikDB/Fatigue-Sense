@@ -1,0 +1,54 @@
+{
+  "experiment": "continued",
+  "resumed_from": "d:\\FatigueSense AI\\checkpoints\\tft_exp_abcd_epoch41_SAFE.ckpt",
+  "resumed_from_epoch": 41,
+  "best_epoch": 41,
+  "best_val_loss": 0.0035149124450981617,
+  "improved_over_previous": true,
+  "training_duration_minutes": 92.5,
+  "validation": {
+    "mae": 0.0007334216497838497,
+    "rmse": 0.001858536503277719
+  },
+  "test": {
+    "mae": 0.0006651815492659807,
+    "rmse": 0.0015027272747829556
+  },
+  "comparison": {
+    "previous_best": {
+      "epoch": 41,
+      "test_mae": 0.000665,
+      "test_rmse": 0.001503,
+      "val_loss": 0.003515
+    },
+    "baseline_tft": {
+      "test_mae": 0.000722
+    },
+    "persistence": {
+      "test_mae": 0.000862
+    },
+    "mae_vs_previous_pct": 0.03,
+    "mae_vs_baseline_pct": -7.87,
+    "mae_vs_persistence_pct": -22.83
+  },
+  "config": {
+    "hidden_size": 128,
+    "attention_head_size": 4,
+    "dropout": 0.1,
+    "hidden_continuous_size": 64,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "max_epochs": 100,
+    "patience": 15,
+    "lookback_steps": 24,
+    "horizon_steps": 3,
+    "precision": "bf16-mixed",
+    "seed": 42,
+    "features": [
+      "avg_cpu_scaled",
+      "avg_memory_scaled",
+      "max_cpu_scaled",
+      "assigned_memory_scaled"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "split_boundaries_seconds": {
+    "train_end": 1875179.9999999998,
+    "val_end": 2276940.0
+  },
+  "scaler_type": "MinMaxScaler",
+  "window_size_seconds": 300,
+  "horizon_steps": 3,
+  "lookback_steps": 12,
+  "sampling_interval_seconds": 300
+}

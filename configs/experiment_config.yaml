@@ -1,0 +1,21 @@
+dataset: google_cluster_2019
+sampling_interval_seconds: 300
+lookback_steps: 12
+forecast_horizon_steps: 3
+forecast_horizon_minutes: 15
+train_split: 0.70
+val_split: 0.15
+test_split: 0.15
+random_seed: 42
+device: cuda
+
+tft:
+  hidden_size: 64
+  attention_head_size: 4
+  dropout: 0.1
+  hidden_continuous_size: 32
+  learning_rate: 0.001
+  batch_size: 64
+  max_epochs: 50
+  patience: 10
+  gradient_clip_val: 0.1

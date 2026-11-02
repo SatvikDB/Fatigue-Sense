@@ -1,0 +1,9 @@
+{
+  "total_windows": 880263,
+  "train_windows": 616630,
+  "val_windows": 133017,
+  "test_windows": 130616,
+  "lookback_steps": 12,
+  "horizon_steps": 3,
+  "feature": "avg_cpu_scaled"
+}

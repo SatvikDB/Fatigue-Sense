@@ -1,0 +1,42 @@
+{
+  "file": "d:\\FatigueSense AI\\data\\raw\\google_cluster_2019.csv",
+  "total_rows": 894263,
+  "unique_instances": 100,
+  "unique_machines": 218,
+  "start_time_range_seconds": {
+    "min": 300.0,
+    "max": 2678700.0,
+    "span_days": 31.0
+  },
+  "observation_count_distribution": {
+    "min": 8924,
+    "p1": 8924,
+    "p5": 8924,
+    "p10": 8924,
+    "p25": 8924,
+    "median": 8924,
+    "mean": 8942.63,
+    "p75": 8925,
+    "p90": 8926,
+    "p95": 8926,
+    "p99": 9435,
+    "max": 9771
+  },
+  "forecasting_params": {
+    "lookback": 12,
+    "horizon": 3,
+    "gap_threshold_seconds": 310
+  },
+  "instances_ge_lookback": 100,
+  "instances_ge_total_seq": 100,
+  "valid_training_windows": 884489,
+  "longest_run_distribution": {
+    "min": 671,
+    "max": 6977,
+    "mean": 2919.71,
+    "median": 2880.0,
+    "p90": 4072.700000000003,
+    "p95": 5433.0,
+    "p99": 6248.360000000004
+  }
+}

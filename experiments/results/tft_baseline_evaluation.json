@@ -1,0 +1,56 @@
+{
+  "model": "TFT",
+  "checkpoint": {
+    "path": "d:\\FatigueSense AI\\checkpoints\\tft_best.ckpt",
+    "epoch": 7,
+    "global_step": 77664
+  },
+  "validation": {
+    "mae": 0.0011963874567300081,
+    "rmse": 0.005512571427971125,
+    "n_samples": 100,
+    "inference_ms": 689.9833679199219
+  },
+  "test": {
+    "mae": 0.0007218607352115214,
+    "rmse": 0.0015296844067052007,
+    "n_samples": 100,
+    "inference_ms": 168.64013671875
+  },
+  "persistence_baseline": {
+    "test_mae": 0.0008617827384942453,
+    "test_rmse": 0.002485218058247947
+  },
+  "tft_vs_persistence": {
+    "mae_improvement_pct": 16.24,
+    "rmse_improvement_pct": 38.45
+  },
+  "cpu_context": {
+    "test_cpu_mean": 0.0077606303236637765,
+    "test_cpu_max": 0.0869140625,
+    "mae_pct_of_mean": 9.3,
+    "mae_pct_of_max": 0.83
+  },
+  "leakage_audit": {
+    "chronological_split": true,
+    "scaler_fit_train_only": true,
+    "no_future_leakage": true,
+    "verdict": "CLEAN"
+  },
+  "config": {
+    "hidden_size": 64,
+    "attention_head_size": 4,
+    "dropout": 0.1,
+    "hidden_continuous_size": 32,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "patience": 10,
+    "lookback_steps": 12,
+    "horizon_steps": 3,
+    "features": [
+      "avg_cpu_scaled"
+    ],
+    "precision": "float32"
+  }
+}
