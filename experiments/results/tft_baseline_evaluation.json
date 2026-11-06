@@ -1,35 +1,35 @@
 {
-  "model": "TFT",
+  "model": "TFT (4 features, 24-step lookback)",
   "checkpoint": {
-    "path": "d:\\FatigueSense AI\\checkpoints\\tft_best.ckpt",
-    "epoch": 7,
-    "global_step": 77664
+    "path": "d:\\FatigueSense AI\\checkpoints\\tft_exp_abcd_epoch41_SAFE.ckpt",
+    "epoch": 41,
+    "global_step": 101724
   },
   "validation": {
-    "mae": 0.0011963874567300081,
-    "rmse": 0.005512571427971125,
+    "mae": 0.0007333646062761545,
+    "rmse": 0.0018586220685392618,
     "n_samples": 100,
-    "inference_ms": 689.9833679199219
+    "inference_ms": 505.1271915435791
   },
   "test": {
-    "mae": 0.0007218607352115214,
-    "rmse": 0.0015296844067052007,
+    "mae": 0.000665307801682502,
+    "rmse": 0.0015029368223622441,
     "n_samples": 100,
-    "inference_ms": 168.64013671875
+    "inference_ms": 229.24423217773438
   },
   "persistence_baseline": {
     "test_mae": 0.0008617827384942453,
     "test_rmse": 0.002485218058247947
   },
   "tft_vs_persistence": {
-    "mae_improvement_pct": 16.24,
-    "rmse_improvement_pct": 38.45
+    "mae_improvement_pct": 22.8,
+    "rmse_improvement_pct": 39.52
   },
   "cpu_context": {
     "test_cpu_mean": 0.0077606303236637765,
     "test_cpu_max": 0.0869140625,
-    "mae_pct_of_mean": 9.3,
-    "mae_pct_of_max": 0.83
+    "mae_pct_of_mean": 8.57,
+    "mae_pct_of_max": 0.77
   },
   "leakage_audit": {
     "chronological_split": true,
@@ -38,19 +38,22 @@
     "verdict": "CLEAN"
   },
   "config": {
-    "hidden_size": 64,
+    "hidden_size": 128,
     "attention_head_size": 4,
     "dropout": 0.1,
-    "hidden_continuous_size": 32,
+    "hidden_continuous_size": 64,
     "learning_rate": 0.001,
-    "batch_size": 64,
-    "max_epochs": 50,
-    "patience": 10,
-    "lookback_steps": 12,
+    "batch_size": 256,
+    "max_epochs": 100,
+    "patience": 15,
+    "lookback_steps": 24,
     "horizon_steps": 3,
     "features": [
-      "avg_cpu_scaled"
+      "avg_cpu_scaled",
+      "avg_memory_scaled",
+      "max_cpu_scaled",
+      "assigned_memory_scaled"
     ],
-    "precision": "float32"
+    "precision": "bf16-mixed"
   }
 }
